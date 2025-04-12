@@ -1,6 +1,11 @@
 import { OpenAPIRoute } from 'chanfana'
 import { z } from 'zod'
-import { Todo } from '@/types'
+
+const Todo = z.object({
+  id: z.number(),
+  title: z.string(),
+  completed: z.boolean(),
+})
 
 export class Todos extends OpenAPIRoute {
   schema = {
