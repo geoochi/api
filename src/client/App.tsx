@@ -7,8 +7,9 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const initCount = async () => {
-    await fetch('/v1/count')
+  const [isLoading, setIsLoading] = useState(false)
+  const initCount = () => {
+    fetch('/v1/count')
       .then(res => res.json() as Promise<{ count: number }>)
       .then(data => setCount(data.count))
   }
@@ -35,8 +36,17 @@ function App() {
       <h1>Vite + React + Hono + Cloudflare</h1>
       <div className='card'>
         <button
+          disabled={isLoading}
           onClick={() => {
-            fetch('/v1/count-plus').then(() => setCount(count => count + 1))
+            setIsLoading(true)
+            fetch('/v1/count-plus')
+              .then(res => res.json() as Promise<{ success: boolean; count: number }>)
+              .then(data => {
+                if (data.success) {
+                  setCount(data.count)
+                }
+              })
+              .finally(() => setIsLoading(false))
           }}
           aria-label='get name'
         >
