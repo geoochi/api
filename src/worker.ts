@@ -4,7 +4,7 @@ import { Todos } from './endpoints/todos'
 import { Count } from './endpoints/count'
 import { CountPlus } from './endpoints/countPlus'
 
-const app = new Hono<{ Bindings: Env }>()
+const app = new Hono()
 const openapi = fromHono(app, {
   docs_url: '/',
 })
