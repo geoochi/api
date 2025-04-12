@@ -8,7 +8,7 @@ import { NotFound } from './endpoints/notFound'
 
 const app = new Hono()
 const openapi = fromHono(app, {
-  docs_url: '/',
+  docs_url: '/docs',
 })
 
 openapi.get('/v1/todos', Todos)
