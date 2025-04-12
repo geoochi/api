@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "demo-cloudflare-worker",
-  "main": "./worker.ts",
+  "main": "./src/worker.ts",
   "compatibility_date": "2025-04-09",
   "d1_databases": [
     {
