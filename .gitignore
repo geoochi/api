@@ -1,0 +1,15 @@
+# misc
+.DS_Store
+
+# deps
+node_modules/
+.wrangler
+
+# prod
+dist/
+
+# env
+.env
+
+# logs
+*.log

@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "demo-cloudflare-worker",
+  "main": "./worker.ts",
+  "compatibility_date": "2025-04-09",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "test-db",
+      "database_id": "e15a8b28-e7fb-455d-ab23-51ce9947fd70"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "effb9a6dbd9d4059a7bb755a53333fa6"
+    }
+  ]
+}

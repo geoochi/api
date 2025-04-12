@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "packageManager": "pnpm@10.8.0",
+  "scripts": {
+    "init:count": "./scripts/init-count.sh",
+    "init:todos": "./scripts/init-todos.sh",
+    "w": "wrangler dev"
+  },
+  "dependencies": {
+    "hono": "^4.7.6",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250410.0",
+    "@types/node": "^22.14.0",
+    "typescript": "5.8.2",
+    "wrangler": "4.10.0"
+  }
+}
