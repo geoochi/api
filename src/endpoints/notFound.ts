@@ -25,6 +25,7 @@ export class NotFound extends OpenAPIRoute {
     return {
       success: false,
       message: 'Not Found',
+      path: c.req.path,
     }
   }
 }
