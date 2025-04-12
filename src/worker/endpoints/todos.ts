@@ -26,7 +26,7 @@ export class Todos extends OpenAPIRoute {
     },
   }
 
-  async handle(c) {
+  async handle(c: any) {
     // const data = await this.getValidatedData<typeof this.schema>()
     const todos = await c.env.DB.prepare('select * from todos').all()
     return {

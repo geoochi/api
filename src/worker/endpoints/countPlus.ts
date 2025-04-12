@@ -20,7 +20,7 @@ export class CountPlus extends OpenAPIRoute {
     },
   }
 
-  async handle(c) {
+  async handle(c: any) {
     // const data = await this.getValidatedData<typeof this.schema>()
     const count = await c.env.KV.get('count')
     await c.env.KV.put('count', (parseInt(count) + 1).toString())
