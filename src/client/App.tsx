@@ -7,10 +7,13 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  useEffect(() => {
-    fetch('/v1/count')
+  const initCount = async () => {
+    await fetch('/v1/count')
       .then(res => res.json() as Promise<{ count: number }>)
       .then(data => setCount(data.count))
+  }
+  useEffect(() => {
+    initCount()
   }, [])
 
   return (
@@ -33,9 +36,7 @@ function App() {
       <div className='card'>
         <button
           onClick={() => {
-            fetch('/v1/count-plus')
-              .then(res => res.json() as Promise<{ count: number }>)
-              .then(data => setCount(data.count))
+            fetch('/v1/count-plus').then(() => setCount(count => count + 1))
           }}
           aria-label='get name'
         >

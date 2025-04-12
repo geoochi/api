@@ -12,7 +12,6 @@ export class CountPlus extends OpenAPIRoute {
           'application/json': {
             schema: z.object({
               success: z.boolean(),
-              count: z.number(),
             }),
           },
         },
@@ -24,6 +23,6 @@ export class CountPlus extends OpenAPIRoute {
     // const data = await this.getValidatedData<typeof this.schema>()
     const count = await c.env.KV.get('count')
     await c.env.KV.put('count', (parseInt(count) + 1).toString())
-    return { success: true, count: parseInt(count) + 1 }
+    return { success: true }
   }
 }
